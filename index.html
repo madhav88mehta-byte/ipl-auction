@@ -1,79 +1,8 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#090b16" />
-  <meta name="description" content="IPL Auction Arena — real-time multiplayer cricket auction." />
-  <title>IPL Auction Arena</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div class="brand"><span class="brand-mark">🏏</span><div><strong>IPL AUCTION</strong><small>ARENA</small></div></div>
-      <div id="connectionPill" class="status-pill offline"><span></span>Offline</div>
-    </header>
-
-    <main>
-      <section id="lobby" class="hero-screen">
-        <div class="hero-copy">
-          <div class="eyebrow">2026 EDITION · MULTIPLAYER</div>
-          <h1>Build your <span>dream XI.</span></h1>
-          <p>Run a full IPL-style auction with your friends. Create a room, share one code, and battle live over every player.</p>
-        </div>
-        <div class="lobby-grid">
-          <article class="panel action-card">
-            <div class="panel-icon">👑</div><h2>Create auction room</h2><p>You become the auctioneer and control nominations, timer and results.</p>
-            <input id="hostName" maxlength="18" placeholder="Your name" />
-            <button id="createRoom" class="primary">Create room <span>→</span></button>
-          </article>
-          <article class="panel action-card">
-            <div class="panel-icon">🎟️</div><h2>Join your friends</h2><p>Enter the room code from the auctioneer and choose your franchise.</p>
-            <input id="guestName" maxlength="18" placeholder="Your name" />
-            <input id="roomCode" maxlength="40" placeholder="Room / host code" />
-            <button id="joinRoom" class="secondary">Join room <span>→</span></button>
-          </article>
-        </div>
-        <div class="feature-strip"><span>⚡ Real-time bidding</span><span>👥 Up to 8 friends</span><span>📋 200+ player pool</span><span>🔒 Peer-to-peer game state</span></div>
-      </section>
-
-      <section id="game" class="game-screen hidden">
-        <div class="game-head">
-          <div><div class="eyebrow">LIVE AUCTION</div><h1 id="roomTitle">Auction Room</h1><div class="room-share">Room code <button id="copyRoom" class="code-btn">—</button></div></div>
-          <div class="head-actions"><button id="copyInvite" class="ghost">🔗 Copy invite</button><button id="leaveRoom" class="danger ghost">Leave</button></div>
-        </div>
-
-        <div class="auction-layout">
-          <aside class="sidebar">
-            <div class="panel roster-panel"><div class="section-title">FRANCHISES <span id="playerCount">0/8</span></div><div id="teamsList"></div></div>
-            <div class="panel players-panel"><div class="section-title">PLAYER POOL</div><div class="filters"><input id="playerSearch" placeholder="Search player..."/><select id="statusFilter"><option value="all">All players</option><option value="current">Current IPL</option><option value="retired">Retired / legends</option></select><select id="roleFilter"><option value="all">All roles</option><option value="Batter">Batters</option><option value="Bowler">Bowlers</option><option value="All-Rounder">All-rounders</option><option value="Wicketkeeper">Keepers</option></select></div><div id="playerPool"></div></div>
-          </aside>
-
-          <section class="center-stage">
-            <div class="panel auction-card">
-              <div class="auction-meta"><span id="lotLabel">LOT 001</span><span id="auctionStatus">WAITING</span></div>
-              <div id="playerStage" class="player-stage empty"><div class="stage-ball">🏏</div><h2>Ready for the first nomination?</h2><p>Host can select a player from the pool.</p></div>
-              <div class="bid-strip"><div><small>CURRENT BID</small><strong id="currentBid">₹0.00 Cr</strong></div><div><small>LEADING TEAM</small><strong id="leadingTeam">—</strong></div><div class="timer-box"><small>TIME</small><strong id="timer">—</strong></div></div>
-              <div class="bid-controls"><div id="bidButtons" class="bid-buttons"></div><button id="nominateBtn" class="primary host-only">Nominate player</button><button id="startTimerBtn" class="secondary host-only hidden">Start bidding</button><button id="sellBtn" class="sell host-only hidden">🔨 SOLD</button><button id="unsoldBtn" class="ghost host-only hidden">Unsold</button></div>
-            </div>
-            <div class="panel activity-panel"><div class="section-title">LIVE ACTIVITY</div><div id="activityLog" class="activity-log"></div></div>
-          </section>
-
-          <aside class="rightbar">
-            <div class="panel my-team"><div class="section-title">MY FRANCHISE</div><div id="myTeamCard"></div></div>
-            <div class="panel chat-panel"><div class="section-title">AUCTION CHAT</div><div id="chatMessages" class="chat-messages"></div><form id="chatForm"><input id="chatInput" maxlength="160" placeholder="Say something..."/><button>➤</button></form></div>
-          </aside>
-        </div>
-      </section>
-    </main>
-  </div>
-  <div id="toast" class="toast"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.5/peerjs.min.js"></script>
-  <script src="players.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="theme-color" content="#090b16"/><meta name="description" content="IPL Auction Arena — live multiplayer cricket auction."/><title>IPL Auction Arena</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"/></head>
+<body><div class="app-shell"><header class="topbar"><div class="brand"><span class="brand-mark">🏏</span><div><strong>IPL AUCTION</strong><small>ARENA</small></div></div><div id="connectionPill" class="status-pill offline"><span></span>Offline</div></header><main>
+<section id="lobby" class="hero-screen"><div class="hero-copy"><div class="eyebrow">2026 EDITION · LIVE MULTIPLAYER</div><h1>Build your <span>dream XI.</span></h1><p>Join the room, pick your franchise and let the auctioneer roll automatically through the player pool.</p></div><div class="lobby-grid"><article class="panel action-card"><div class="panel-icon">👑</div><h2>Create auction room</h2><p>You host the auction. Players appear automatically one after another.</p><input id="hostName" maxlength="18" placeholder="Your name"/><button id="createRoom" class="primary">Open auction <span>→</span></button></article><article class="panel action-card"><div class="panel-icon">🎟️</div><h2>Join your friends</h2><p>Enter the room code and compete live for your franchise.</p><input id="guestName" maxlength="18" placeholder="Your name"/><input id="roomCode" maxlength="40" placeholder="Room code"/><button id="joinRoom" class="secondary">Join auction <span>→</span></button></article></div><div class="feature-strip"><span>⚡ Auto player flow</span><span>👥 Up to 8 friends</span><span>📋 Current + legends</span><span>🚫 No manual nomination</span></div></section>
+<section id="game" class="game-screen hidden"><div class="game-head"><div><div class="eyebrow">LIVE AUCTION · LOT BY LOT</div><h1 id="roomTitle">Auction Room</h1><div class="room-share">Room code <button id="copyRoom" class="code-btn">—</button></div></div><div class="head-actions"><button id="copyInvite" class="ghost">🔗 Copy invite</button><button id="leaveRoom" class="danger ghost">Leave</button></div></div>
+<div class="auction-layout"><aside class="sidebar"><div class="panel roster-panel"><div class="section-title">FRANCHISES <span id="playerCount">0/8</span></div><div id="teamsList"></div></div><div class="panel players-panel"><div class="section-title">PLAYER POOL</div><div class="filters"><input id="playerSearch" placeholder="Search player..."/><select id="statusFilter"><option value="all">All players</option><option value="current">Current IPL</option><option value="retired">Retired / legends</option></select><select id="roleFilter"><option value="all">All roles</option><option value="Batter">Batters</option><option value="Bowler">Bowlers</option><option value="All-Rounder">All-rounders</option><option value="Wicketkeeper">Keepers</option></select></div><div id="playerPool"></div></div></aside>
+<section class="center-stage"><div class="panel auction-card"><div class="auction-meta"><span id="lotLabel">LOT 001</span><span id="auctionStatus">WAITING FOR PLAYERS</span></div><div id="playerStage" class="player-stage empty"><div class="stage-ball">🏏</div><h2>Auction starting…</h2><p>Players will appear automatically.</p></div><div class="bid-strip"><div><small>CURRENT BID</small><strong id="currentBid">₹0.00 Cr</strong></div><div><small>LEADING TEAM</small><strong id="leadingTeam">—</strong></div><div class="timer-box"><small>TIME LEFT</small><strong id="timer">—</strong></div></div><div class="bid-controls"><div id="bidButtons" class="bid-buttons"></div><button id="sellBtn" class="sell host-only hidden">🔨 SOLD</button><button id="unsoldBtn" class="ghost host-only hidden">Unsold</button></div></div><div class="panel activity-panel"><div class="section-title">LIVE ACTIVITY</div><div id="activityLog" class="activity-log"></div></div></section>
+<aside class="rightbar"><div class="panel my-team"><div class="section-title">MY FRANCHISE</div><div id="myTeamCard"></div></div><div class="panel chat-panel"><div class="section-title">AUCTION CHAT</div><div id="chatMessages" class="chat-messages"></div><form id="chatForm"><input id="chatInput" maxlength="160" placeholder="Say something..."/><button>➤</button></form></div></aside></div></section></main></div><div id="toast" class="toast"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.5/peerjs.min.js"></script><script src="players.js"></script><script src="app.js"></script></body></html>
